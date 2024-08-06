@@ -15,53 +15,32 @@ CATCH_TRANSLATE_EXCEPTION(::Langulus::Exception const& ex) {
    return ::std::string {Token {serialized}};
 }
 
-SCENARIO("Input handler creation", "[input]") {
+SCENARIO("Lore and Story creation", "[storyteller]") {
    static Allocator::State memoryState;
    
    for (int repeat = 0; repeat != 10; ++repeat) {
       GIVEN(std::string("Init and shutdown cycle #") + std::to_string(repeat)) {
          // Create root entity                                          
-         auto root = Thing::Root<false>("InputSDL");
+         auto root = Thing::Root<false>("Storyteller");
 
-         WHEN("The input gatherer is created via abstractions") {
-            auto gatherer = root.CreateUnit<A::InputGatherer>();
-            auto listener = root.CreateUnit<A::InputListener>();
-
-            // Update once                                              
-            root.Update(Time::zero());
-            root.DumpHierarchy();
-
-            REQUIRE(gatherer.GetCount() == 1);
-            REQUIRE(gatherer.CastsTo<A::InputGatherer>(1));
-            REQUIRE(gatherer.IsSparse());
-
-            REQUIRE(listener.GetCount() == 1);
-            REQUIRE(listener.CastsTo<A::InputListener>(1));
-            REQUIRE(listener.IsSparse());
-
-            REQUIRE(root.GetUnits().GetCount() == 2);
-         }
-
-      #if LANGULUS_FEATURE(MANAGED_REFLECTION)
-         WHEN("The input gatherer is created via tokens") {
-            auto gatherer = root.CreateUnitToken("InputGatherer");
-            auto listener = root.CreateUnitToken("InputListener");
+         WHEN("The units are created via tokens") {
+            auto lore = root.CreateUnitToken("Lore");
+            auto story = root.CreateUnitToken("Story");
 
             // Update once                                              
             root.Update(Time::zero());
             root.DumpHierarchy();
 
-            REQUIRE(gatherer.GetCount() == 1);
-            REQUIRE(gatherer.CastsTo<A::InputGatherer>(1));
-            REQUIRE(gatherer.IsSparse());
+            REQUIRE(lore.GetCount() == 1);
+            REQUIRE(lore.CastsTo<A::Unit>(1));
+            REQUIRE(lore.IsSparse());
 
-            REQUIRE(listener.GetCount() == 1);
-            REQUIRE(listener.CastsTo<A::InputListener>(1));
-            REQUIRE(listener.IsSparse());
+            REQUIRE(story.GetCount() == 1);
+            REQUIRE(story.CastsTo<A::Unit>(1));
+            REQUIRE(story.IsSparse());
 
             REQUIRE(root.GetUnits().GetCount() == 2);
          }
-      #endif
 
          // Check for memory leaks after each cycle                     
          REQUIRE(memoryState.Assert());

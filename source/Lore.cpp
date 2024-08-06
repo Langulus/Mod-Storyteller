@@ -16,9 +16,9 @@ Lore::Lore(Storyteller* producer, const Neat& descriptor)
    : Resolvable   {this}
    , ProducedFrom {producer, descriptor}
    , mStories     {this} {
-   VERBOSE_INPUT("Initializing...");
+   VERBOSE_STORYTELLER("Initializing...");
    Couple(descriptor);
-   VERBOSE_INPUT("Initialized");
+   VERBOSE_STORYTELLER("Initialized");
 }
 
 /// Shutdown the module                                                       
