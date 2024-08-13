@@ -21,7 +21,7 @@ Storyteller::Storyteller(Runtime* runtime, const Neat&)
    : Resolvable{this}
    , A::Module {runtime}
    , mLore     {this} {
-   VERBOSE_STORYTELLER("Initializing...");
+   VERBOSE_STORYTELLER("Initializing...", NameOf<Lore>());
    VERBOSE_STORYTELLER("Initialized");
 }
 
