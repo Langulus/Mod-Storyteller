@@ -28,7 +28,7 @@ SCENARIO("Lore and Story creation", "[storyteller]") {
             auto story = root.CreateUnitToken("Story");
 
             // Update once                                              
-            root.Update(Time::zero());
+            root.Update({});
             root.DumpHierarchy();
 
             REQUIRE(lore.GetCount() == 1);
