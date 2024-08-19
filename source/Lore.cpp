@@ -15,7 +15,7 @@
 Lore::Lore(Storyteller* producer, const Neat& descriptor)
    : Resolvable   {this}
    , ProducedFrom {producer, descriptor}
-   , mStories     {this} {
+   /*, mStories     {this}*/ {
    VERBOSE_STORYTELLER("Initializing...");
    Couple(descriptor);
    VERBOSE_STORYTELLER("Initialized");
@@ -29,7 +29,7 @@ Lore::~Lore() {
 /// Produce stories                                                           
 ///   @param verb - creation verb to satisfy                                  
 void Lore::Create(Verb& verb) {
-   mStories.Create(verb);
+   mStories.Create(this, verb);
 }
 
 /// React on environmental change                                             

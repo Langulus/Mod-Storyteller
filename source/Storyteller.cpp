@@ -20,8 +20,8 @@ LANGULUS_DEFINE_MODULE(
 Storyteller::Storyteller(Runtime* runtime, const Neat&)
    : Resolvable{this}
    , A::Module {runtime}
-   , mLore     {this} {
-   VERBOSE_STORYTELLER("Initializing...", NameOf<Lore>());
+   /*, mLore     {this}*/ {
+   VERBOSE_STORYTELLER("Initializing...");
    VERBOSE_STORYTELLER("Initialized");
 }
 
@@ -40,5 +40,5 @@ bool Storyteller::Update(Time deltaTime) {
 /// Create/Destroy lore systems                                               
 ///   @param verb - the creation/destruction verb                             
 void Storyteller::Create(Verb& verb) {
-   mLore.Create(verb);
+   mLore.Create(this, verb);
 }
