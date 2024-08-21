@@ -14,8 +14,7 @@
 ///   @param descriptor - instructions for configuring the lore               
 Lore::Lore(Storyteller* producer, const Neat& descriptor)
    : Resolvable   {this}
-   , ProducedFrom {producer, descriptor}
-   /*, mStories     {this}*/ {
+   , ProducedFrom {producer, descriptor} {
    VERBOSE_STORYTELLER("Initializing...");
    Couple(descriptor);
    VERBOSE_STORYTELLER("Initialized");
