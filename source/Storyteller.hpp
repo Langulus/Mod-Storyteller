@@ -23,7 +23,7 @@ private:
    TFactory<Lore> mLore;
 
 public:
-    Storyteller(Runtime*, const Neat&);
+    Storyteller(Runtime*, Describe);
    ~Storyteller();
 
    bool Update(Time);
