@@ -24,7 +24,7 @@ private:
    TFactory<Story> mStories;
 
 public:
-    Lore(Storyteller*, Describe);
+    Lore(Storyteller*, const Many&);
    ~Lore();
 
    void Create(Verb&);

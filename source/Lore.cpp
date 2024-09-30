@@ -12,7 +12,7 @@
 /// Gatherer construction                                                     
 ///   @param producer - the system producer                                   
 ///   @param descriptor - instructions for configuring the lore               
-Lore::Lore(Storyteller* producer, Describe descriptor)
+Lore::Lore(Storyteller* producer, const Many& descriptor)
    : Resolvable   {this}
    , ProducedFrom {producer, descriptor} {
    VERBOSE_STORYTELLER("Initializing...");

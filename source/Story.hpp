@@ -18,7 +18,7 @@ struct Story final : A::Unit, ProducedFrom<Lore> {
    LANGULUS_BASES(A::Unit);
 
 public:
-   Story(Lore*, Describe);
+   Story(Lore*, const Many&);
 
    void Refresh();
 };
