@@ -24,11 +24,6 @@ Storyteller::Storyteller(Runtime* runtime, const Many&)
    VERBOSE_STORYTELLER("Initialized");
 }
 
-///                                                                           
-Storyteller::~Storyteller() {
-
-}
-
 /// Module update routine                                                     
 ///   @param deltaTime - time between updates                                 
 ///   @return false if the module requested exit                              
