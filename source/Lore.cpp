@@ -20,9 +20,9 @@ Lore::Lore(Storyteller* producer, const Many& descriptor)
    VERBOSE_STORYTELLER("Initialized");
 }
 
-/// Shutdown the module                                                       
-Lore::~Lore() {
-
+/// First stage destruction                                                   
+void Lore::Teardown() {
+   mStories.Teardown();
 }
 
 /// Produce stories                                                           

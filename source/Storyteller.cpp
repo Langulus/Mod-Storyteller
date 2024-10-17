@@ -24,6 +24,11 @@ Storyteller::Storyteller(Runtime* runtime, const Many&)
    VERBOSE_STORYTELLER("Initialized");
 }
 
+/// First stage destruction                                                   
+void Storyteller::Teardown() {
+   mLore.Teardown();
+}
+
 /// Module update routine                                                     
 ///   @param deltaTime - time between updates                                 
 ///   @return false if the module requested exit                              
