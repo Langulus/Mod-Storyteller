@@ -12,11 +12,7 @@ file(GLOB_RECURSE
 )
 
 # Build the module                                                              
-add_library(LangulusModStoryteller SHARED ${LANGULUS_MOD_STORYTELLER_SOURCES})
-
-target_link_libraries(LangulusModStoryteller
-    PRIVATE     Langulus
-)
+add_langulus_mod(LangulusModStoryteller ${LANGULUS_MOD_STORYTELLER_SOURCES})
 
 if(LANGULUS_TESTING)
     enable_testing()
