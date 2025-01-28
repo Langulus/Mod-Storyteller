@@ -32,7 +32,7 @@ void Storyteller::Teardown() {
 /// Module update routine                                                     
 ///   @param deltaTime - time between updates                                 
 ///   @return false if the module requested exit                              
-bool Storyteller::Update(Time deltaTime) {
+bool Storyteller::Update(Time) {
    return true;
 }
 
