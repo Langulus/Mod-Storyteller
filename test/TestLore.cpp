@@ -26,14 +26,14 @@ SCENARIO("Lore and Story creation", "[storyteller]") {
             root.DumpHierarchy();
 
             REQUIRE(lore.GetCount() == 1);
-            REQUIRE(lore.CastsTo<A::Unit>(1));
+            REQUIRE(lore.CastsTo<Part>(1));
             REQUIRE(lore.IsSparse());
-            REQUIRE(lore.Get<A::Unit>().GetReferences() == 5);
+            REQUIRE(lore.Get<Part>().GetReferences() == 5);
 
             REQUIRE(story.GetCount() == 1);
-            REQUIRE(story.CastsTo<A::Unit>(1));
+            REQUIRE(story.CastsTo<Part>(1));
             REQUIRE(story.IsSparse());
-            REQUIRE(story.Get<A::Unit>().GetReferences() == 4);
+            REQUIRE(story.Get<Part>().GetReferences() == 4);
 
             REQUIRE(root.GetUnits().GetCount() == 2);
          }

@@ -12,7 +12,7 @@
 /// Story construction                                                        
 ///   @param producer - the producer                                          
 ///   @param descriptor - instructions for generating the story               
-Story::Story(Lore* producer, const Many& descriptor)
+Story::Story(Lore* producer, Many const& descriptor)
    : Resolvable   {this}
    , ProducedFrom {producer, descriptor} {
    VERBOSE_STORYTELLER("Initializing...");

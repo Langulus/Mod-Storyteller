@@ -17,7 +17,7 @@ LANGULUS_DEFINE_MODULE(
 /// Module construction                                                       
 ///   @param runtime - the runtime that owns the module                       
 ///   @param descriptor - instructions for configuring the module             
-Storyteller::Storyteller(Runtime* runtime, const Many&)
+Storyteller::Storyteller(Runtime* runtime, Many const&)
    : Resolvable  {this}
    , A::Module   {runtime} {
    VERBOSE_STORYTELLER("Initializing...");

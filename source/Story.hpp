@@ -13,13 +13,13 @@
 ///                                                                           
 ///   Story                                                                   
 ///                                                                           
-struct Story final : A::Unit, ProducedFrom<Lore> {
+struct Story final : Part, ProducedFrom<Lore> {
    LANGULUS(ABSTRACT) false;
    LANGULUS(PRODUCER) Lore;
-   LANGULUS_BASES(A::Unit);
+   LANGULUS_BASES(Part);
 
 public:
-   Story(Lore*, const Many&);
+   Story(Lore*, Many const&);
 
    void Refresh();
 };

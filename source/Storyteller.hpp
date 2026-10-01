@@ -23,7 +23,7 @@ private:
    TFactory<Lore> mLore;
 
 public:
-   Storyteller(Runtime*, const Many&);
+   Storyteller(Runtime*, Many const&);
 
    bool Update(Time);
    void Create(Verb&);

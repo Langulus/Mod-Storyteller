@@ -14,10 +14,10 @@
 ///                                                                           
 ///   Lore                                                                    
 ///                                                                           
-struct Lore final : A::Unit, ProducedFrom<Storyteller> {
+struct Lore final : Part, ProducedFrom<Storyteller> {
    LANGULUS(ABSTRACT) false;
    LANGULUS(PRODUCER) Storyteller;
-   LANGULUS_BASES(A::Unit);
+   LANGULUS_BASES(Part);
    LANGULUS_VERBS(Verbs::Create);
 
 private:
@@ -25,7 +25,7 @@ private:
    TFactory<Story> mStories;
 
 public:
-   Lore(Storyteller*, const Many&);
+   Lore(Storyteller*, Many const&);
 
    void Create(Verb&);
    void Refresh();
