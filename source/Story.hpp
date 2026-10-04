@@ -14,8 +14,8 @@
 ///   Story                                                                   
 ///                                                                           
 struct Story final : Part, ProducedFrom<Lore> {
-   LANGULUS(ABSTRACT) false;
-   LANGULUS(PRODUCER) Lore;
+   using CTTI_Abstract = No;
+   using CTTI_Producer = Lore;
    LANGULUS_BASES(Part);
 
 public:

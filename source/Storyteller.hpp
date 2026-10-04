@@ -13,9 +13,9 @@
 ///                                                                           
 ///   Storyteller module                                                      
 ///                                                                           
-struct Storyteller final : A::Module {
-   LANGULUS(ABSTRACT) false;
-   LANGULUS_BASES(A::Module);
+struct Storyteller final : Things::Module {
+   using CTTI_Abstract = No;
+   LANGULUS_BASES(Things::Module);
    LANGULUS_VERBS(Verbs::Create);
 
 private:

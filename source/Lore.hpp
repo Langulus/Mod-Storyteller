@@ -15,8 +15,8 @@
 ///   Lore                                                                    
 ///                                                                           
 struct Lore final : Part, ProducedFrom<Storyteller> {
-   LANGULUS(ABSTRACT) false;
-   LANGULUS(PRODUCER) Storyteller;
+   using CTTI_Abstract = No;
+   using CTTI_Producer = Storyteller;
    LANGULUS_BASES(Part);
    LANGULUS_VERBS(Verbs::Create);
 
