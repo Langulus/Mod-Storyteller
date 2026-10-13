@@ -17,7 +17,7 @@ SCENARIO("Lore and Story creation", "[storyteller]") {
          // Create root entity                                          
          auto root = Thing::Root<false>("Storyteller");
 
-         WHEN("The units are created via tokens") {
+         WHEN("The parts are created via tokens") {
             auto lore  = root.CreateUnitToken("Lore");
             auto story = root.CreateUnitToken("Story");
 
