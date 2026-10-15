@@ -18,8 +18,8 @@ SCENARIO("Lore and Story creation", "[storyteller]") {
          auto root = Thing::Root<false>("Storyteller");
 
          WHEN("The parts are created via tokens") {
-            auto lore  = root.CreateUnitToken("Lore");
-            auto story = root.CreateUnitToken("Story");
+            auto lore  = root.CreatePartToken("Lore");
+            auto story = root.CreatePartToken("Story");
 
             // Update once                                              
             root.Update({});
