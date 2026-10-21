@@ -13,7 +13,7 @@
 ///   @param producer - the system producer                                   
 ///   @param descriptor - instructions for configuring the lore               
 Lore::Lore(Storyteller* producer, Many const& descriptor)
-   : Resolvable   {this}
+   : Downcastable   {this}
    , ProducedFrom {producer, descriptor} {
    VERBOSE_STORYTELLER("Initializing...");
    Couple(descriptor);
