@@ -18,8 +18,8 @@ struct Story;
 
 #if 1
    #define VERBOSE_STORYTELLER_ENABLED() 1
-   #define VERBOSE_STORYTELLER(...)      Logger::Info(Self(), __VA_ARGS__)
-   #define VERBOSE_STORYTELLER_TAB(...)  const auto tab = Logger::InfoTab(Self(), __VA_ARGS__)
+   #define VERBOSE_STORYTELLER(...)      Logger::Info(this, __VA_ARGS__)
+   #define VERBOSE_STORYTELLER_TAB(...)  const auto tab = Logger::InfoTab(this, __VA_ARGS__)
 #else
    #define VERBOSE_STORYTELLER_ENABLED() 0
    #define VERBOSE_STORYTELLER(...)      LANGULUS(NOOP)
