@@ -13,12 +13,11 @@
 
 ///                                                                           
 ///   Lore                                                                    
-///                                                                           
-struct Lore final : Part, ProducedFrom<Storyteller> {
-   using CTTI_Abstract = No;
-   using CTTI_Producer = Storyteller;
-   LANGULUS_BASES(Part);
-   LANGULUS_VERBS(Verbs::Create);
+struct Lore final : Things::Part, ProducedFrom<Storyteller> {
+   using CTTI_Abstract  = No;
+   using CTTI_Producer  = Storyteller;
+   using CTTI_Bases     = Things::Part;
+   using CTTI_Ability   = Verbs::Create;
 
 private:
    // List of created stories                                           

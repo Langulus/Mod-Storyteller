@@ -12,11 +12,10 @@
 
 ///                                                                           
 ///   Storyteller module                                                      
-///                                                                           
 struct Storyteller final : Things::Module {
-   using CTTI_Abstract = No;
-   LANGULUS_BASES(Things::Module);
-   LANGULUS_VERBS(Verbs::Create);
+   using CTTI_Abstract  = No;
+   using CTTI_Bases     = Things::Module;
+   using CTTI_Ability   = Verbs::Create;
 
 private:
    // List of created lore systems                                      
