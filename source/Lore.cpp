@@ -10,10 +10,10 @@
 
 
 /// Gatherer construction                                                     
-///   @param producer - the system producer                                   
-///   @param descriptor - instructions for configuring the lore               
-Lore::Lore(Storyteller* producer, Many const& descriptor)
-   : Downcastable   {this}
+///   @param producer the system producer                                     
+///   @param descriptor instructions for configuring the lore                 
+Lore::Lore(Storyteller* producer, Neat const& descriptor)
+   : Downcastable {this}
    , ProducedFrom {producer, descriptor} {
    VERBOSE_STORYTELLER("Initializing...");
    Couple(descriptor);

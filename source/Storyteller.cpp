@@ -15,11 +15,11 @@ LANGULUS_DEFINE_MODULE(
 
 
 /// Module construction                                                       
-///   @param runtime - the runtime that owns the module                       
-///   @param descriptor - instructions for configuring the module             
-Storyteller::Storyteller(Runtime* runtime, Many const&)
-   : Downcastable  {this}
-   , Things::Module   {runtime} {
+///   @param runtime the runtime that owns the module                         
+///   @param descriptor instructions for configuring the module               
+Storyteller::Storyteller(Runtime* runtime, Neat const&)
+   : Downcastable {this}
+   , Module       {runtime} {
    VERBOSE_STORYTELLER("Initializing...");
    VERBOSE_STORYTELLER("Initialized");
 }
@@ -30,14 +30,14 @@ void Storyteller::Teardown() {
 }
 
 /// Module update routine                                                     
-///   @param deltaTime - time between updates                                 
+///   @param deltaTime time between updates                                   
 ///   @return false if the module requested exit                              
 bool Storyteller::Update(Time) {
    return true;
 }
 
 /// Create/Destroy lore systems                                               
-///   @param verb - the creation/destruction verb                             
+///   @param verb the creation/destruction verb                               
 void Storyteller::Create(Verb& verb) {
    mLore.Create(this, verb);
 }

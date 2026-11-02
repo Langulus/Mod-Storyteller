@@ -24,7 +24,7 @@ private:
    TFactory<Story> mStories;
 
 public:
-   Lore(Storyteller*, Many const&);
+   Lore(Storyteller*, Neat const&);
 
    void Create(Verb&);
    void Refresh();

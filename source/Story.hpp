@@ -18,7 +18,7 @@ struct Story final : Things::Part, ProducedFrom<Lore> {
    using CTTI_Bases     = Things::Part;
 
 public:
-   Story(Lore*, Many const&);
+   Story(Lore*, Neat const&);
 
    void Refresh();
 };
