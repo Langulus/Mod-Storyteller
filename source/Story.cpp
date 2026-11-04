@@ -12,7 +12,7 @@
 /// Story construction                                                        
 ///   @param producer the producer                                            
 ///   @param descriptor instructions for generating the story                 
-Story::Story(Lore* producer, Neat const& descriptor)
+Story::Story(Lore const* producer, Neat const& descriptor)
    : Downcastable {this}
    , ProducedFrom {producer, descriptor} {
    VERBOSE_STORYTELLER("Initializing...");
