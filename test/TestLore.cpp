@@ -35,7 +35,7 @@ SCENARIO("Lore and Story creation", "[storyteller]") {
             REQUIRE(story.IsSparse());
             REQUIRE(story.Get<Part>().GetReferences() == 4);
 
-            REQUIRE(root.GetUnits().GetCount() == 2);
+            REQUIRE(root.GetParts().GetCount() == 2);
          }
 
          // Check for memory leaks after each cycle                     
