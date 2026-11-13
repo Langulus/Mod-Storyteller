@@ -7,13 +7,18 @@
 ///                                                                           
 #include <Langulus/Thing.hpp>
 #include <Langulus/Testing.hpp>
+#include <Langulus/Allocator.hpp>
+
+using namespace Langulus;
+using Things::Thing;
+using Things::Part;
 
 
-SCENARIO("Lore and Story creation", "[storyteller]") {
-   static Allocator::State memoryState;
+SCENARIO("Lore and Story creation") {
+   static MemoryState memoryState;
    
-   for (int repeat = 0; repeat != 10; ++repeat) {
-      GIVEN(std::string("Init and shutdown cycle #") + std::to_string(repeat)) {
+   GIVEN("Init and shutdown cycles") {
+      for (int repeat = 0; repeat != 10; ++repeat) {
          // Create root entity                                          
          auto root = Thing::Root<false>("Storyteller");
 
@@ -28,18 +33,18 @@ SCENARIO("Lore and Story creation", "[storyteller]") {
             REQUIRE(lore.GetCount() == 1);
             REQUIRE(lore.CastsTo<Part>(1));
             REQUIRE(lore.IsSparse());
-            REQUIRE(lore.Get<Part>().GetReferences() == 5);
+            REQUIRE(lore.Get<Part>()->GetReferences() == 5);
 
             REQUIRE(story.GetCount() == 1);
             REQUIRE(story.CastsTo<Part>(1));
             REQUIRE(story.IsSparse());
-            REQUIRE(story.Get<Part>().GetReferences() == 4);
+            REQUIRE(story.Get<Part>()->GetReferences() == 4);
 
             REQUIRE(root.GetParts().GetCount() == 2);
          }
 
-         // Check for memory leaks after each cycle                     
          REQUIRE(memoryState.Assert());
+         REQUIRE_FALSE(Allocator::CollectGarbage());
       }
    }
 }
